@@ -1,12 +1,13 @@
 import React from 'react'
 import Header from '../../components/template/Header'
+import Todo from '../../components/Todo/Todo'
 
 function Home(props) {
 
     return(
         <>
         <Header/>
-        <h1>home</h1>
+        <Todo/>
         </>
     )
 }
