@@ -1,10 +1,14 @@
 import React from 'react'
+import Header from '../../components/template/Header'
 
 function NotFound(props) {
 
     return(
         <>
-        <h1 className="text-center">NotFound 404</h1>
+        <Header/>
+        <h1 className="text-center">
+            Ops! Página não encontrada
+        </h1>
         </>
     )
 }
