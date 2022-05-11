@@ -4,24 +4,34 @@ import { Container, ListGroup, Row, Col, Button } from 'react-bootstrap'
 
 function TodoList(props) {
 
-    const renderTask = () => {
+    const tasks = props.tasks || []
+
+    const taskDone = (task) => {
         return (
-            <ListGroup.Item>
-                <Row className="itemTask">
-                    <Col xs={6} md={8}>
-                        Fazer algo
-                    </Col>
-                    <Col>
-                        <Button variant="info">
-                            Concluir
-                        </Button>
-                        <Button className="mx-3" variant="danger">
-                            Deletar
-                        </Button>
-                    </Col>
-                </Row>
-            </ListGroup.Item>
+            <Button variant={task.done ? 'success' : 'info'}>
+                { task.done ? 'Concluído' : 'Concluir' }
+            </Button>
         )
+    }
+
+    const renderTask = () => {
+        return tasks.map((item) => {
+            return (
+                <ListGroup.Item key={item.id}>
+                    <Row className="itemTask">
+                        <Col xs={6} md={8}>
+                            {item.description}
+                        </Col>
+                        <Col>
+                            {taskDone(item)}
+                            <Button className="mx-3" variant="danger">
+                                Deletar
+                            </Button>
+                        </Col>
+                    </Row>
+                </ListGroup.Item>
+            )
+        })
     }
 
     return (

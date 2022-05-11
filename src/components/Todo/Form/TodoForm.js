@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 import './TodoForm.css'
+import { taskModel } from '../../../models'
 
 function TodoForm(props) {
 
-    const [description, setDescription] = useState('')
+    const [task, setTask] = useState(taskModel)
 
     const submitEnter = (event) => {
         if (event.key == 'Enter') {
             submit()
         } else if (event.key == 'Escape') {
-            setDescription('')
+            setTask(taskModel)
         }
     }
 
     const submit = () => {
-        console.log("foi")
-        setDescription('')
+        props.register(task)
+        setTask(taskModel)
     }
 
     return(
@@ -29,8 +30,12 @@ function TodoForm(props) {
                                 <Form.Label>Tarefa</Form.Label>
                                 <Form.Control type="text" 
                                     placeholder="Digite a tarefa"
-                                    onChange={event => {setDescription(event.target.value)}}
-                                    value={description}
+                                    onChange={event => {
+                                        setTask({
+                                            ...task,
+                                            description: event.target.value})
+                                    }}
+                                    value={task.description}
                                     onKeyUp={submitEnter}/>
                             </Form.Group>
                         </Col>

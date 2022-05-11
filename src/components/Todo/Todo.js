@@ -1,13 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import TodoForm from './Form/TodoForm'
 import TodoList from './List/TodoList'
+import { baseUrl } from '../../environments'
 
 function Todo(props) {
 
+    const URL = `${baseUrl}/todo`
+    const [tasks, setTasks] = useState([])
+
+    useEffect(() => {
+        getTasks()
+    },[])
+
+    const getTasks = () => {
+        axios.get(`${URL}`)
+        .then((response) => {
+            setTasks(response.data)
+        })
+    }
+
+    const registerTask = (task) => {
+        axios.post(`${URL}`, task)
+        .then((response) => {
+            getTasks()
+        })
+    }
+
     return(
         <>
-            <TodoForm/>
-            <TodoList/>
+            <TodoForm register={registerTask}/>
+            <TodoList tasks={tasks}/>
         </>
     )
 }
