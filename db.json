@@ -2,7 +2,7 @@
   "todo": [
     {
       "description": "Tarefa 1",
-      "done": true,
+      "done": false,
       "id": 1
     },
     {
@@ -36,9 +36,57 @@
       "id": 7
     },
     {
-      "description": "asdasd",
+      "description": "qualquer",
       "done": false,
       "id": 8
+    }
+  ],
+  "customer": [
+    {
+      "name": "André",
+      "age": "28",
+      "document": "123456789",
+      "tel": "19245-545",
+      "state": 1,
+      "id": 1
+    },
+    {
+      "name": "Will",
+      "age": "38",
+      "document": "123456789",
+      "tel": "987654321",
+      "state": 2,
+      "id": 2
+    },
+    {
+      "name": "Augusto",
+      "age": "30",
+      "document": "123456789",
+      "tel": "987654321",
+      "state": "3",
+      "id": 3
+    },
+    {
+      "name": "Ivo",
+      "age": "39",
+      "document": "123456789",
+      "tel": "987654321",
+      "state": "2",
+      "id": 4
+    }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "name": "SP"
+    },
+    {
+      "id": 2,
+      "name": "RJ"
+    },
+    {
+      "id": 3,
+      "name": "MG"
     }
   ]
 }

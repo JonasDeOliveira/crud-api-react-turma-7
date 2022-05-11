@@ -1,4 +1,7 @@
 export default {
-    nome: "",
-    nascimento: ""
+    name: "",
+    age: "",
+    document: "",
+    tel: "",
+    state: null
 }

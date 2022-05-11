@@ -20,8 +20,8 @@ function Todo(props) {
         })
     }
 
-    const registerTask = (task) => {
-        axios.post(`${URL}`, task)
+    const registerTask = (descriptionForm) => {
+        axios.post(`${URL}`, { description: descriptionForm, status: false })
         .then((response) => {
             getTasks()
         })

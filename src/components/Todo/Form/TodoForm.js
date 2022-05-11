@@ -5,19 +5,20 @@ import { taskModel } from '../../../models'
 
 function TodoForm(props) {
 
-    const [task, setTask] = useState(taskModel)
+    // const [task, setTask] = useState(taskModel)
+    const [description, setDescription] = useState('')
 
     const submitEnter = (event) => {
         if (event.key == 'Enter') {
             submit()
         } else if (event.key == 'Escape') {
-            setTask(taskModel)
+            // setTask(taskModel)
         }
     }
 
     const submit = () => {
-        props.register(task)
-        setTask(taskModel)
+        props.register(description)
+        // setTask(taskModel)
     }
 
     return(
@@ -30,13 +31,18 @@ function TodoForm(props) {
                                 <Form.Label>Tarefa</Form.Label>
                                 <Form.Control type="text" 
                                     placeholder="Digite a tarefa"
+                                    onChange={event => {setDescription(event.target.value)}}
+                                    value={description}
+                                    onKeyUp={submitEnter}/>
+                                {/* <Form.Control type="text" 
+                                    placeholder="Digite a tarefa"
                                     onChange={event => {
                                         setTask({
                                             ...task,
                                             description: event.target.value})
                                     }}
                                     value={task.description}
-                                    onKeyUp={submitEnter}/>
+                                    onKeyUp={submitEnter}/> */}
                             </Form.Group>
                         </Col>
                         <Col>
