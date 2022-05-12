@@ -11,7 +11,7 @@ function Todo(props) {
 
     useEffect(() => {
         getTasks()
-    })
+    }, [])
 
     const getTasks = () => {
         axios.get(`${URL}`)
