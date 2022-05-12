@@ -7,7 +7,7 @@ function Footer(props) {
 
     return(
         <>
-        <div className="footer">
+        <div className="footer mt-3">
             <Container>
                 <Row>
                     <Col xs={6} md={3}>

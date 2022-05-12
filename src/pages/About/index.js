@@ -1,12 +1,16 @@
 import React from 'react'
 import Header from '../../components/template/Header'
+import {Container} from 'react-bootstrap'
 
 function About(props) {
 
     return(
         <>
         <Header/>
-        <h1>About</h1>
+        <Container>
+            <h1>About</h1>
+        </Container>
+        
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 import './TodoForm.css'
-import { taskModel } from '../../../models'
+// import { taskModel } from '../../../models'
 
 function TodoForm(props) {
 
@@ -9,15 +9,17 @@ function TodoForm(props) {
     const [description, setDescription] = useState('')
 
     const submitEnter = (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             submit()
-        } else if (event.key == 'Escape') {
+        } else if (event.key === 'Escape') {
+            setDescription('')
             // setTask(taskModel)
         }
     }
 
     const submit = () => {
         props.register(description)
+        setDescription('')
         // setTask(taskModel)
     }
 
