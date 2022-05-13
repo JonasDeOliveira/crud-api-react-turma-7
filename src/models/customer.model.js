@@ -3,7 +3,10 @@ const customer = {
     age: "",
     document: "",
     tel: "",
-    state: null
+    state: {
+        name: "",
+        id: null
+    }
 }
 
 export default customer
